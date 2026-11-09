@@ -1,34 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Consulte a previsão do tempo, temperatura, umidade e condições climáticas de qualquer cidade.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Matemasie&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <title>AppPrevisao</title>
+
+    <title>Previsão do Tempo | AppPrevisao</title>
 </head>
 
 <body>
-    <div class="caixa-maior">
-        <h2 class="Titulo">&#x2600; Previsão do Tempo &#x2600;</h2>
-        <input type="text" placeholder="cidade" class="input-cidade">
-        <button class="btn-pesquisa" onclick="Coletar()">Pesquisar</button>
-        <div class="caixa-media">
-            <p class="cidade">Tempo em </p>
-            <p class="graus">Temperatura:  °C</p>
-        </div>
-        <div class="caixa-pequena">
-            <p class="previsao">Ensolarado</p>
-            <img class="img-previsao" src="https://openweathermap.org/img/wn/01d.png" alt="">
-        </div>
-        <p class="umidade">Umidade Relativa do Ar:  %</p>
-        <p class="pressao">Pressao atmosférica:  hPa</p>
-        <p class="nivelMar">Nivel do Mar:  hPa</p>
-        <p class="tempMax">Temperatura Maxima:  °C</p>
-        <p class="tempMin">Temperatura Minima:  °C</p>
-    </div>
+
+    <main class="caixa-maior">
+
+        <header class="cabecalho">
+            <h1 class="Titulo">☀ Previsão do Tempo</h1>
+            <p>Consulte as condições climáticas da sua cidade.</p>
+        </header>
+
+        <section class="pesquisa" aria-label="Pesquisar cidade">
+
+            <input
+                type="text"
+                id="cidade"
+                placeholder="Digite o nome da cidade"
+                class="input-cidade"
+                aria-label="Nome da cidade"
+                autocomplete="off"
+            >
+
+            <button class="btn-pesquisa" type="button" onclick="Coletar()">
+                Pesquisar
+            </button>
+
+        </section>
+
+        <section class="resultado" aria-live="polite">
+
+            <div class="caixa-media">
+                <p class="cidade">Tempo em --</p>
+                <p class="graus">-- °C</p>
+            </div>
+
+            <div class="caixa-pequena">
+
+                <img
+                    class="img-previsao"
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    alt="Ícone ilustrativo das condições climáticas"
+                >
+
+                <p class="previsao">Aguardando pesquisa</p>
+
+            </div>
+
+            <section class="detalhes">
+
+                <div class="item-detalhe">
+                    <span>Umidade</span>
+                    <p class="umidade">-- %</p>
+                </div>
+
+                <div class="item-detalhe">
+                    <span>Pressão atmosférica</span>
+                    <p class="pressao">-- hPa</p>
+                </div>
+
+                <div class="item-detalhe">
+                    <span>Nível do mar</span>
+                    <p class="nivelMar">-- hPa</p>
+                </div>
+
+                <div class="item-detalhe">
+                    <span>Temperatura máxima</span>
+                    <p class="tempMax">-- °C</p>
+                </div>
+
+                <div class="item-detalhe">
+                    <span>Temperatura mínima</span>
+                    <p class="tempMin">-- °C</p>
+                </div>
+
+            </section>
+
+        </section>
+
+        <footer class="rodape">
+            <p>Dados meteorológicos fornecidos pela OpenWeatherMap.</p>
+        </footer>
+
+    </main>
+
     <script src="main.js"></script>
+
 </body>
+</html>
